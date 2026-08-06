@@ -166,9 +166,9 @@ Use EXACTLY this structure:
     ]
   }},
 
-  "comparison": "Write one clear paragraph comparing the two options.",
+  "recommendation": "Write one clear paragraph recommending the stronger option. This field is REQUIRED and must never be empty.",
 
-  "recommendation": "Write one clear paragraph recommending the stronger option."
+  "comparison": "Write one clear paragraph comparing the two options."
 }}
 
 IMPORTANT:
@@ -479,16 +479,19 @@ Every field must contain an answer.
             # Recommendation
             # -------------------------
 
-            st.subheader("💡 Recommendation")
-
             recommendation = result.get(
                 "recommendation",
-                "No recommendation was returned."
-            )
+                ""
+            ).strip()
+
+            if not recommendation:
+                recommendation = "No recommendation was returned."
 
             st.success(
                 format_text(recommendation)
             )
+
+
 
         except json.JSONDecodeError:
 
