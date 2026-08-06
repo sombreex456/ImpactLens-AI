@@ -54,3 +54,31 @@ ImpactLens-AI/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
+## How to Run It Locally
+
+1. **Clone the repository**
+```bash
+   git clone https://github.com/sombreex456/ImpactLens-AI.git
+   cd ImpactLens-AI
+```
+
+2. **Install the required Python packages**
+```bash
+   pip install -r requirements.txt
+```
+
+3. **Install and run Ollama**
+   Download Ollama from [ollama.com](https://ollama.com), then pull the model this app uses:
+```bash
+   ollama pull llama3.2
+```
+   Make sure Ollama is running in the background.
+
+4. **Run the Streamlit app**
+```bash
+   streamlit run app.py
+```
+
+5. **Open the app**
+   Streamlit will automatically open it in your browser, usually at `http://localhost:8501`.
